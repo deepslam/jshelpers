@@ -21,3 +21,7 @@ Object.size = function(obj) {
     }
     return size;
 };
+
+Object.uniq = function(length) {
+    return Math.random().toString(length).substr(2, length-2);
+}
