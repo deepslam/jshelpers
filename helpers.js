@@ -25,3 +25,16 @@ Object.size = function(obj) {
 Object.uniq = function(length) {
     return Math.random().toString(length).substr(2, length-2);
 }
+
+Object.isArray = function(obj) {
+    return Object.prototype.toString.call(obj) === '[object Array]';
+}
+
+Object.isNonEmptyArray = function(obj) {
+    try { // don't bother with `typeof` - just access `length` and `catch`
+        return obj.length > 0 && '0' in Object(obj);
+    }
+    catch(e) {
+        return false;
+    }
+}
